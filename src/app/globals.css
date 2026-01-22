@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Core Colors */
+  --citadel-black: #0A0A0A;
+  --citadel-charcoal: #111111;
+  --citadel-slate: #1A1A1A;
+  --citadel-border: #2A2A2A;
+  --citadel-gold: #C9A227;
+  --citadel-gold-light: #D4AF37;
+  --citadel-cream: #F5F5F0;
+  
+  /* Pillar Colors */
+  --pillar-defense: #C9A227;
+  --pillar-liquidity: #3B82F6;
+  --pillar-yield: #10B981;
+  --pillar-structure: #F59E0B;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--citadel-black);
+  color: var(--citadel-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+.font-serif {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+}
+
+/* Container */
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-citadel-charcoal border border-citadel-border rounded-2xl p-6;
+  }
+
+  .card-elevated {
+    @apply bg-citadel-charcoal border border-citadel-border rounded-2xl p-6 
+           hover:border-citadel-gold/20 transition-all duration-300;
+  }
+
+  /* Gold Glow Effect */
+  .gold-glow {
+    box-shadow: 0 0 60px -15px rgba(201, 162, 39, 0.15);
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 
+           bg-citadel-gold text-citadel-black font-medium rounded-lg
+           hover:bg-citadel-gold-light transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-citadel-gold focus:ring-offset-2 focus:ring-offset-citadel-black;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 
+           bg-transparent border border-citadel-border text-citadel-cream font-medium rounded-lg
+           hover:border-citadel-gold/50 hover:text-citadel-gold transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-citadel-gold focus:ring-offset-2 focus:ring-offset-citadel-black;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-4 py-2 
+           text-citadel-cream/80 font-medium rounded-lg
+           hover:text-citadel-gold hover:bg-citadel-slate/50 transition-all duration-200;
+  }
+
+  /* Pillar Borders */
+  .pillar-border-defense {
+    @apply border-l-4 border-l-citadel-gold;
+  }
+
+  .pillar-border-liquidity {
+    @apply border-l-4 border-l-blue-500;
+  }
+
+  .pillar-border-yield {
+    @apply border-l-4 border-l-green-500;
+  }
+
+  .pillar-border-structure {
+    @apply border-l-4 border-l-amber-500;
+  }
+
+  /* Gradient Hero */
+  .gradient-hero {
+    background: linear-gradient(180deg, var(--citadel-charcoal) 0%, var(--citadel-black) 100%);
+    position: relative;
+  }
+
+  .gradient-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(201, 162, 39, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+}
+
+/* Custom Colors for Tailwind */
+@layer base {
+  :root {
+    --color-citadel-black: 10 10 10;
+    --color-citadel-charcoal: 17 17 17;
+    --color-citadel-slate: 26 26 26;
+    --color-citadel-border: 42 42 42;
+    --color-citadel-gold: 201 162 39;
+    --color-citadel-gold-light: 212 175 55;
+    --color-citadel-cream: 245 245 240;
+  }
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+/* Form Inputs */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-track {
+  background: var(--citadel-slate);
+  height: 4px;
+  border-radius: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--citadel-gold);
+  margin-top: -6px;
+}
+
+input[type="range"]::-moz-range-track {
+  background: var(--citadel-slate);
+  height: 4px;
+  border-radius: 2px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--citadel-gold);
+  border: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--citadel-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--citadel-slate);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--citadel-border);
+}
+
+/* Selection */
+::selection {
+  background: rgba(201, 162, 39, 0.3);
+  color: var(--citadel-cream);
+}
+
+/* Focus Visible */
+:focus-visible {
+  outline: 2px solid var(--citadel-gold);
+  outline-offset: 2px;
+}
+
+/* Prose styling for content */
+.prose-citadel {
+  color: rgba(245, 245, 240, 0.7);
+}
+
+.prose-citadel strong {
+  color: var(--citadel-cream);
+}
+
+.prose-citadel a {
+  color: var(--citadel-gold);
+  text-decoration: none;
+}
+
+.prose-citadel a:hover {
+  text-decoration: underline;
+}
