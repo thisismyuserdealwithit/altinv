@@ -1,17 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, BookOpen, FileText, TrendingUp, Video, Mic, Clock, Lock } from 'lucide-react'
+import { ArrowRight, BookOpen, FileText, TrendingUp, Video, Mic, Clock } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Research & Insights | Alternative Investment Analysis | Alt-Wealth Citadel',
-  description: 'In-depth research on alternative investments. Market analysis, investment theses, due diligence guides, and expert commentary on metals, real estate, and collectibles.',
+  title: 'Research & Insights | Alternative Allocation',
+  description: 'In depth research on alternative investments. Market analysis, investment theses, due diligence guides, and expert commentary on metals, real estate, art, and collectibles.',
   keywords: 'alternative investment research, market analysis, investment thesis, due diligence guide, metals research, real estate analysis',
 }
 
 const featuredArticles = [
   {
     title: 'The Strategic Metals Thesis: Why Gallium Matters More Than Gold',
-    excerpt: 'Semiconductor supply chains depend on materials most investors have never heard of. Here\'s why critical minerals are the new precious metals.',
+    excerpt: 'Semiconductor supply chains depend on materials most investors have never heard of. Here is why critical minerals are the new precious metals.',
     category: 'Metals',
     readTime: '12 min',
     date: 'Jan 6, 2026',
@@ -19,8 +19,8 @@ const featuredArticles = [
     href: '/research/strategic-metals-thesis',
   },
   {
-    title: '2026 Real Estate Outlook: Where to Find Yield in a Higher-Rate World',
-    excerpt: 'Cap rates have expanded, but not uniformly. Our metro-by-metro analysis reveals pockets of value in industrial, multifamily, and self-storage.',
+    title: '2026 Real Estate Outlook: Where to Find Yield',
+    excerpt: 'Cap rates have expanded, but not uniformly. Our analysis reveals pockets of value in Dubai, industrial, and self storage.',
     category: 'Real Estate',
     readTime: '18 min',
     date: 'Jan 3, 2026',
@@ -28,17 +28,41 @@ const featuredArticles = [
     href: '/research/2026-real-estate-outlook',
   },
   {
-    title: 'The SDIRA Playbook: Tax-Free Alternatives Investing',
-    excerpt: 'How sophisticated investors use Self-Directed IRAs to buy metals, real estate, and private deals inside a tax-sheltered wrapper.',
-    category: 'Strategy',
-    readTime: '15 min',
-    date: 'Dec 28, 2025',
+    title: 'Art Market Outlook for 2026',
+    excerpt: 'Analysis of the fine art market heading into 2026. Auction trends, top performing artists, and the rise of fractional ownership.',
+    category: 'Art',
+    readTime: '10 min',
+    date: 'Jan 2, 2026',
     featured: true,
-    href: '/research/sdira-playbook',
+    href: '/research/art-market-outlook',
   },
 ]
 
 const articles = [
+  {
+    title: 'Litigation Finance: A Primer for Alternative Investors',
+    excerpt: 'Complete introduction to litigation finance as an asset class. Understand how legal funding works and why returns are uncorrelated.',
+    category: 'Litigation',
+    readTime: '12 min',
+    date: 'Jan 1, 2026',
+    href: '/research/litigation-finance-primer',
+  },
+  {
+    title: 'The SDIRA Playbook: Tax Free Alternatives Investing',
+    excerpt: 'How sophisticated investors use Self Directed IRAs to buy metals, real estate, and private deals inside a tax sheltered wrapper.',
+    category: 'Strategy',
+    readTime: '15 min',
+    date: 'Dec 28, 2025',
+    href: '/research/sdira-playbook',
+  },
+  {
+    title: 'Business Acquisition Due Diligence Checklist',
+    excerpt: 'Complete checklist for acquiring a small business. Every item to review before signing the purchase agreement.',
+    category: 'Acquisitions',
+    readTime: '8 min',
+    date: 'Dec 25, 2025',
+    href: '/research/business-acquisition-checklist',
+  },
   {
     title: 'Collectibles as an Asset Class: Beyond the Hype',
     excerpt: 'Historical returns, correlation data, and due diligence frameworks for art, wine, and watches.',
@@ -48,7 +72,7 @@ const articles = [
     href: '/research/collectibles-asset-class',
   },
   {
-    title: 'International Banking for US Investors: A Compliance-First Guide',
+    title: 'International Banking for US Investors: A Compliance First Guide',
     excerpt: 'FBAR, FATCA, and the legal ways to bank offshore. What you need to know before opening that HSBC Expat account.',
     category: 'Global',
     readTime: '8 min',
@@ -57,75 +81,74 @@ const articles = [
   },
   {
     title: 'Real Estate Syndication Due Diligence: 47 Questions to Ask',
-    excerpt: 'Before you wire $50K to a sponsor, here\'s the complete checklist we use to evaluate deals.',
+    excerpt: 'Before you wire $50K to a sponsor, here is the complete checklist we use to evaluate deals.',
     category: 'Real Estate',
     readTime: '14 min',
     date: 'Dec 10, 2025',
     href: '/research/syndication-due-diligence',
   },
   {
-    title: 'Rare Earth Supply Chains: China\'s Chokehold',
-    excerpt: 'Mapping the geopolitical risks in critical mineral supply chains—and how investors can profit from reshoring.',
-    category: 'Metals',
-    readTime: '11 min',
-    date: 'Dec 5, 2025',
-    href: '/research/rare-earth-supply-chains',
-  },
-  {
-    title: 'The Case for Fine Wine: Bordeaux as a 30-Year Investment',
-    excerpt: 'Château Lafite vs. the S&P 500. We ran the numbers on three decades of fine wine returns.',
+    title: 'The Case for Fine Wine: Bordeaux as a 30 Year Investment',
+    excerpt: 'Chateau Lafite vs. the S&P 500. We ran the numbers on three decades of fine wine returns.',
     category: 'Collectibles',
     readTime: '9 min',
     date: 'Nov 28, 2025',
     href: '/research/fine-wine-investment',
   },
   {
-    title: 'Entity Structuring for Alternative Investors',
-    excerpt: 'LLC vs. Trust vs. Direct: How to hold different alternative assets for optimal tax and liability treatment.',
+    title: 'Allocation Framework for Alternative Investors',
+    excerpt: 'How to determine the right mix of alternative investments based on your goals, timeline, and risk tolerance.',
     category: 'Strategy',
-    readTime: '13 min',
+    readTime: '11 min',
     date: 'Nov 20, 2025',
-    href: '/research/entity-structuring',
+    href: '/research/allocation-framework',
   },
 ]
 
 const categories = [
-  { name: 'All', count: 24 },
-  { name: 'Metals', count: 6 },
-  { name: 'Real Estate', count: 8 },
-  { name: 'Collectibles', count: 4 },
-  { name: 'Global', count: 3 },
-  { name: 'Strategy', count: 5 },
+  { name: 'All', count: 15 },
+  { name: 'Metals', count: 3 },
+  { name: 'Real Estate', count: 3 },
+  { name: 'Art', count: 2 },
+  { name: 'Collectibles', count: 2 },
+  { name: 'Litigation', count: 1 },
+  { name: 'Acquisitions', count: 1 },
+  { name: 'Global', count: 1 },
+  { name: 'Strategy', count: 2 },
 ]
 
 const resources = [
   {
     icon: FileText,
-    title: 'Investment Memos',
-    description: 'Detailed analysis on specific opportunities',
-    access: 'Member',
-    count: 12,
+    title: 'Brochures',
+    description: 'Detailed guides on each investment sector',
+    access: 'Free',
+    count: 6,
+    href: '/brochures',
   },
   {
     icon: Video,
     title: 'Video Library',
     description: 'Expert interviews and market commentary',
     access: 'Free',
-    count: 45,
+    count: 12,
+    href: '/research',
   },
   {
     icon: Mic,
-    title: 'Podcast Archive',
-    description: 'The Alt-Wealth Hour weekly episodes',
+    title: 'Newsletter',
+    description: 'Weekly insights delivered to your inbox',
     access: 'Free',
-    count: 78,
+    count: 52,
+    href: '/newsletter',
   },
   {
     icon: BookOpen,
     title: 'Guides & Playbooks',
-    description: 'Comprehensive how-to resources',
+    description: 'Comprehensive how to resources',
     access: 'Free',
-    count: 15,
+    count: 8,
+    href: '/research',
   },
 ]
 
@@ -144,15 +167,15 @@ export default function ResearchPage() {
             </h1>
             <p className="text-xl text-citadel-cream/60 leading-relaxed mb-8">
               Go beyond the headlines. Our research team delivers actionable 
-              analysis on metals, real estate, collectibles, and wealth strategy—
-              the kind of insight that was once reserved for family offices.
+              analysis on metals, real estate, art, collectibles, and more. 
+              The kind of insight that was once reserved for family offices.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="#articles" className="btn-primary">
                 Latest Research
               </Link>
-              <Link href="/membership" className="btn-secondary">
-                Unlock Full Access
+              <Link href="/brochures" className="btn-secondary">
+                Download Brochures
               </Link>
             </div>
           </div>
@@ -234,14 +257,9 @@ export default function ResearchPage() {
                   <p className="text-xs text-citadel-cream/60 mb-3">
                     Weekly insights delivered to your inbox.
                   </p>
-                  <input
-                    type="email"
-                    placeholder="you@email.com"
-                    className="w-full bg-citadel-charcoal border border-citadel-border rounded-lg px-3 py-2 text-sm text-citadel-cream mb-2 focus:outline-none focus:border-citadel-gold"
-                  />
-                  <button className="btn-primary w-full text-sm py-2">
-                    Subscribe
-                  </button>
+                  <Link href="/newsletter" className="btn-primary w-full text-sm py-2 justify-center">
+                    Subscribe Free
+                  </Link>
                 </div>
               </div>
             </div>
@@ -255,7 +273,6 @@ export default function ResearchPage() {
                 <select className="bg-citadel-slate border border-citadel-border rounded-lg px-3 py-2 text-sm text-citadel-cream focus:outline-none">
                   <option>Most Recent</option>
                   <option>Most Popular</option>
-                  <option>Oldest First</option>
                 </select>
               </div>
 
@@ -292,12 +309,6 @@ export default function ResearchPage() {
                   </Link>
                 ))}
               </div>
-
-              <div className="mt-8 text-center">
-                <button className="btn-secondary">
-                  Load More Articles
-                </button>
-              </div>
             </div>
           </div>
         </div>
@@ -308,29 +319,24 @@ export default function ResearchPage() {
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold text-citadel-cream mb-4">
-              More Ways to Learn
+              More Resources
             </h2>
             <p className="text-citadel-cream/60">
-              Beyond articles, we offer video content, podcasts, and downloadable 
-              resources to help you make smarter investment decisions.
+              Beyond articles, we offer brochures, video content, and 
+              downloadable resources to help you make smarter decisions.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {resources.map((resource) => (
-              <div key={resource.title} className="card group hover:border-citadel-gold/30 transition-colors">
+              <Link key={resource.title} href={resource.href} className="card group hover:border-citadel-gold/30 transition-colors">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="p-2 rounded-lg bg-citadel-slate">
                     <resource.icon className="w-5 h-5 text-citadel-gold" />
                   </div>
-                  <div className="flex items-center gap-2">
-                    <h3 className="font-serif text-lg font-semibold text-citadel-cream">
-                      {resource.title}
-                    </h3>
-                    {resource.access === 'Member' && (
-                      <Lock className="w-3 h-3 text-citadel-gold" />
-                    )}
-                  </div>
+                  <h3 className="font-serif text-lg font-semibold text-citadel-cream group-hover:text-citadel-gold transition-colors">
+                    {resource.title}
+                  </h3>
                 </div>
                 <p className="text-sm text-citadel-cream/60 mb-3">
                   {resource.description}
@@ -338,7 +344,7 @@ export default function ResearchPage() {
                 <div className="text-xs text-citadel-cream/50">
                   {resource.count} available
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -350,14 +356,14 @@ export default function ResearchPage() {
           <div className="card gold-glow max-w-3xl mx-auto text-center">
             <TrendingUp className="w-10 h-10 text-citadel-gold mx-auto mb-4" />
             <h2 className="font-serif text-2xl md:text-3xl font-semibold text-citadel-cream mb-4">
-              Get Premium Research
+              Want Personalized Guidance?
             </h2>
             <p className="text-citadel-cream/60 mb-6">
-              Members get access to investment memos, deal analysis, and 
-              exclusive market intelligence. Join the investors who know more.
+              Talk to our team about which research applies to your specific 
+              situation and goals. Free consultation, no obligation.
             </p>
-            <Link href="/membership" className="btn-primary">
-              View Membership Options
+            <Link href="/call" className="btn-primary">
+              Book a Free Call
             </Link>
           </div>
         </div>
@@ -365,4 +371,3 @@ export default function ResearchPage() {
     </div>
   )
 }
-
