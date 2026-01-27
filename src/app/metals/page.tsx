@@ -1,12 +1,8 @@
-import type { Metadata } from 'next'
+'use client'
+
 import Link from 'next/link'
 import { ArrowRight, Shield, TrendingUp, Lock, Truck } from 'lucide-react'
-
-export const metadata: Metadata = {
-  title: 'Strategic Metals | Gallium, Germanium & Critical Materials | Alt-Wealth Citadel',
-  description: 'Invest in strategic metals that power modern technology. Gallium for semiconductors, germanium for fiber optics, rare earths for EVs. Request a quote from our metals desk.',
-  keywords: 'strategic metals investment, gallium investing, germanium price, rare earth metals, critical materials, precious metals alternative',
-}
+import { TalkToExpertButton } from '@/components/TalkToExpertButton'
 
 const metals = [
   {
@@ -73,9 +69,23 @@ const benefits = [
 export default function MetalsPage() {
   return (
     <div className="pt-20">
-      {/* Hero */}
-      <section className="section-padding gradient-hero">
-        <div className="container-custom">
+      {/* Hero with Video */}
+      <section className="relative section-padding overflow-hidden">
+        {/* Background Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/metals.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-citadel-black/95 via-citadel-black/80 to-citadel-black/60" />
+        
+        <div className="container-custom relative z-10">
           <div className="max-w-3xl">
             <p className="text-citadel-gold uppercase tracking-[0.2em] text-sm font-medium mb-4">
               Tangible Defense
@@ -85,14 +95,12 @@ export default function MetalsPage() {
             </h1>
             <p className="text-xl text-citadel-cream/60 leading-relaxed mb-8">
               Beyond gold and silver. The critical materials that power semiconductors, 
-              fiber optics, and electric vehicles—with supply chains concentrated in 
+              fiber optics, and electric vehicles with supply chains concentrated in 
               geopolitically sensitive regions. Scarcity you can hold.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="#metals" className="btn-primary">
-                Explore Metals
-              </Link>
-              <Link href="/contact" className="btn-secondary">
+              <TalkToExpertButton variant="primary" />
+              <Link href="/metals/quote" className="btn-secondary">
                 Request a Quote
               </Link>
             </div>

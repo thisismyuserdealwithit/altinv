@@ -6,9 +6,23 @@ import { TalkToExpertButton } from '../TalkToExpertButton'
 
 export function AdvisorCTA() {
   return (
-    <section className="section-padding bg-citadel-charcoal">
-      <div className="container-custom">
-        <div className="card gold-glow max-w-4xl mx-auto">
+    <section className="relative section-padding overflow-hidden">
+      {/* Background Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/videos/expert.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-citadel-black/80" />
+      
+      <div className="container-custom relative z-10">
+        <div className="card gold-glow max-w-4xl mx-auto bg-citadel-charcoal/90 backdrop-blur-sm">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* Content */}
             <div>

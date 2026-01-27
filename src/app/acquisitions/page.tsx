@@ -84,11 +84,16 @@ export default function AcquisitionsPage() {
             </div>
 
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-2xl border border-amber-500/30 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <Briefcase className="w-24 h-24 text-amber-400 mx-auto mb-4" />
-                  <p className="text-citadel-cream/60">Main Street Acquisitions</p>
-                </div>
+              <div className="aspect-square rounded-2xl overflow-hidden border border-amber-500/30">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                >
+                  <source src="/videos/acquisitions.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>

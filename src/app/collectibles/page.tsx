@@ -1,12 +1,8 @@
-import type { Metadata } from 'next'
+'use client'
+
 import Link from 'next/link'
 import { ArrowRight, TrendingUp, Eye, ShieldCheck, Palette, Wine, Watch, Gem } from 'lucide-react'
-
-export const metadata: Metadata = {
-  title: 'Collectibles & Passion Assets | Fine Art, Wine, Watches | Alt-Wealth Citadel',
-  description: 'Invest in museum-quality collectibles. Fine art, rare wine, luxury watches, and vintage automobiles. Fractional ownership and full acquisitions for serious collectors.',
-  keywords: 'art investing, wine investment, luxury watches investment, collectibles, passion assets, masterworks, vinovest, fractional art',
-}
+import { TalkToExpertButton } from '@/components/TalkToExpertButton'
 
 const categories = [
   {
@@ -57,9 +53,23 @@ const partners = [
 export default function CollectiblesPage() {
   return (
     <div className="pt-20">
-      {/* Hero */}
-      <section className="section-padding gradient-hero">
-        <div className="container-custom">
+      {/* Hero with Video */}
+      <section className="relative section-padding overflow-hidden">
+        {/* Background Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/collectibles.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-citadel-black/95 via-citadel-black/80 to-citadel-black/60" />
+        
+        <div className="container-custom relative z-10">
           <div className="max-w-3xl">
             <p className="text-purple-400 uppercase tracking-[0.2em] text-sm font-medium mb-4">
               Tangible Defense
@@ -73,11 +83,9 @@ export default function CollectiblesPage() {
               that have outperformed the S&P 500 over the last two decades.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="#categories" className="btn-primary">
+              <TalkToExpertButton variant="primary" />
+              <Link href="#categories" className="btn-secondary">
                 Explore Categories
-              </Link>
-              <Link href="/tools/collectibles-valuation" className="btn-secondary">
-                Valuation Tool
               </Link>
             </div>
           </div>

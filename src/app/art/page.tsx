@@ -87,11 +87,16 @@ export default function ArtPage() {
             </div>
 
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-2xl border border-pink-500/30 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <Palette className="w-24 h-24 text-pink-400 mx-auto mb-4" />
-                  <p className="text-citadel-cream/60">Contemporary Art Portfolio</p>
-                </div>
+              <div className="aspect-square rounded-2xl overflow-hidden border border-pink-500/30">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                >
+                  <source src="/videos/art.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>

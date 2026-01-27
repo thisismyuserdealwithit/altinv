@@ -15,21 +15,23 @@ const sectors = [
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center gradient-hero overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="1"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" className="text-citadel-cream" />
-        </svg>
-      </div>
-
-      {/* Gradient Orb */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-citadel-gold/5 blur-[150px] pointer-events-none" />
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/videos/hero-gold.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-citadel-black/90 via-citadel-black/70 to-citadel-black/50" />
+      
+      {/* Gold Accent Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-citadel-black via-transparent to-transparent" />
 
       <div className="container-custom relative z-10 pt-32 pb-20">
         <div className="max-w-4xl">

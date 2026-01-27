@@ -88,11 +88,16 @@ export default function DubaiRealEstatePage() {
             </div>
 
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-2xl border border-green-500/30 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <Building2 className="w-24 h-24 text-green-400 mx-auto mb-4" />
-                  <p className="text-citadel-cream/60">Dubai Property Portfolio</p>
-                </div>
+              <div className="aspect-square rounded-2xl overflow-hidden border border-green-500/30">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                >
+                  <source src="/videos/dubai.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>
