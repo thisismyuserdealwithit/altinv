@@ -46,11 +46,24 @@ body {
 /* Container */
 @layer components {
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-5 sm:px-6 lg:px-8;
   }
 
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-12 sm:py-16 md:py-24;
+  }
+
+  /* Mobile-first responsive text */
+  .text-hero {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
+  }
+
+  .text-section-title {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+  }
+
+  .text-card-title {
+    @apply text-lg sm:text-xl;
   }
 
   /* Cards */
@@ -68,25 +81,28 @@ body {
     box-shadow: 0 0 60px -15px rgba(201, 162, 39, 0.15);
   }
 
-  /* Buttons */
+  /* Buttons - Mobile optimized with larger touch targets */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 
-           bg-citadel-gold text-citadel-black font-medium rounded-lg
-           hover:bg-citadel-gold-light transition-all duration-200
-           focus:outline-none focus:ring-2 focus:ring-citadel-gold focus:ring-offset-2 focus:ring-offset-citadel-black;
+    @apply inline-flex items-center justify-center px-5 py-3 sm:px-6 sm:py-3
+           bg-citadel-gold text-citadel-black font-medium rounded-lg text-sm sm:text-base
+           hover:bg-citadel-gold-light active:scale-[0.98] transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-citadel-gold focus:ring-offset-2 focus:ring-offset-citadel-black
+           min-h-[44px];
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 
-           bg-transparent border border-citadel-border text-citadel-cream font-medium rounded-lg
-           hover:border-citadel-gold/50 hover:text-citadel-gold transition-all duration-200
-           focus:outline-none focus:ring-2 focus:ring-citadel-gold focus:ring-offset-2 focus:ring-offset-citadel-black;
+    @apply inline-flex items-center justify-center px-5 py-3 sm:px-6 sm:py-3
+           bg-transparent border border-citadel-border text-citadel-cream font-medium rounded-lg text-sm sm:text-base
+           hover:border-citadel-gold/50 hover:text-citadel-gold active:scale-[0.98] transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-citadel-gold focus:ring-offset-2 focus:ring-offset-citadel-black
+           min-h-[44px];
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center px-4 py-2 
-           text-citadel-cream/80 font-medium rounded-lg
-           hover:text-citadel-gold hover:bg-citadel-slate/50 transition-all duration-200;
+    @apply inline-flex items-center justify-center px-4 py-2.5
+           text-citadel-cream/80 font-medium rounded-lg text-sm sm:text-base
+           hover:text-citadel-gold hover:bg-citadel-slate/50 active:scale-[0.98] transition-all duration-200
+           min-h-[44px];
   }
 
   /* Pillar Borders */
@@ -122,6 +138,50 @@ body {
     background: radial-gradient(ellipse at 50% 0%, rgba(201, 162, 39, 0.08) 0%, transparent 60%);
     pointer-events: none;
   }
+
+  /* Video Overlay with Gold Tint */
+  .video-overlay-gold {
+    background: linear-gradient(
+      135deg,
+      rgba(10, 10, 10, 0.85) 0%,
+      rgba(10, 10, 10, 0.7) 40%,
+      rgba(201, 162, 39, 0.15) 100%
+    );
+  }
+
+  .video-overlay-gold::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at 70% 20%,
+      rgba(201, 162, 39, 0.12) 0%,
+      transparent 50%
+    );
+    pointer-events: none;
+  }
+
+  /* Video vignette effect */
+  .video-vignette {
+    box-shadow: inset 0 0 150px 60px rgba(10, 10, 10, 0.8);
+  }
+
+  /* Shimmer animation for gold accents */
+  .shimmer-gold {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(201, 162, 39, 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 8s ease-in-out infinite;
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: -200% 0; }
+  50% { background-position: 200% 0; }
 }
 
 /* Custom Colors for Tailwind */

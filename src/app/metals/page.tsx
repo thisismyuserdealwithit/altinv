@@ -70,35 +70,40 @@ export default function MetalsPage() {
   return (
     <div className="pt-20">
       {/* Hero with Video */}
-      <section className="relative section-padding overflow-hidden">
+      <section className="relative section-padding overflow-hidden min-h-[60vh] sm:min-h-[70vh] flex items-center">
         {/* Background Video */}
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover scale-105"
         >
           <source src="/videos/metals.mp4" type="video/mp4" />
         </video>
         
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-citadel-black/95 via-citadel-black/80 to-citadel-black/60" />
+        {/* Multi-layer Gold Overlay */}
+        <div className="absolute inset-0 video-overlay-gold" />
+        <div className="absolute inset-0 bg-gradient-to-b from-citadel-black/50 via-transparent to-citadel-black" />
+        <div className="absolute inset-0 bg-gradient-to-r from-citadel-black/90 via-citadel-black/60 to-transparent" />
+        
+        {/* Vignette */}
+        <div className="absolute inset-0 video-vignette pointer-events-none" />
         
         <div className="container-custom relative z-10">
           <div className="max-w-3xl">
-            <p className="text-citadel-gold uppercase tracking-[0.2em] text-sm font-medium mb-4">
+            <p className="text-citadel-gold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-xs sm:text-sm font-medium mb-3 sm:mb-4">
               Tangible Defense
             </p>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-citadel-cream mb-6 leading-tight">
+            <h1 className="font-serif text-section-title sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-citadel-cream mb-4 sm:mb-6 leading-tight">
               Strategic Metals
             </h1>
-            <p className="text-xl text-citadel-cream/60 leading-relaxed mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-citadel-cream/70 leading-relaxed mb-6 sm:mb-8">
               Beyond gold and silver. The critical materials that power semiconductors, 
               fiber optics, and electric vehicles with supply chains concentrated in 
               geopolitically sensitive regions. Scarcity you can hold.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
               <TalkToExpertButton variant="primary" />
               <Link href="/metals/quote" className="btn-secondary">
                 Request a Quote

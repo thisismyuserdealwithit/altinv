@@ -60,24 +60,24 @@ export default function ArtPage() {
       {/* Hero */}
       <section className="section-padding gradient-hero">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-500/10 border border-pink-500/30 mb-6">
-                <Palette className="w-4 h-4 text-pink-400" />
-                <span className="text-sm text-pink-400">Partner: Yieldstreet</span>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-pink-500/10 border border-pink-500/30 mb-4 sm:mb-6">
+                <Palette className="w-3 h-3 sm:w-4 sm:h-4 text-pink-400" />
+                <span className="text-xs sm:text-sm text-pink-400">Partner: Yieldstreet</span>
               </div>
               
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-citadel-cream mb-6 leading-tight">
+              <h1 className="font-serif text-section-title sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-citadel-cream mb-4 sm:mb-6 leading-tight">
                 Invest in<br />
                 <span className="text-pink-400">Blue Chip Art</span>
               </h1>
               
-              <p className="text-xl text-citadel-cream/60 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-citadel-cream/70 leading-relaxed mb-6 sm:mb-8">
                 Own shares in masterworks by Basquiat, Warhol, Banksy, and more. 
                 Fractional ownership makes museum quality art accessible to everyone.
               </p>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                 <TalkToExpertButton variant="primary" />
                 <Link href="/art/guide" className="btn-secondary group">
                   How It Works
@@ -86,17 +86,20 @@ export default function ArtPage() {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="aspect-square rounded-2xl overflow-hidden border border-pink-500/30">
+            <div className="relative order-1 lg:order-2">
+              <div className="aspect-video sm:aspect-square rounded-2xl overflow-hidden border border-pink-500/30 shadow-2xl shadow-pink-500/10">
                 <video
                   autoPlay
                   muted
                   loop
                   playsInline
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover scale-105"
                 >
                   <source src="/videos/art.mp4" type="video/mp4" />
                 </video>
+                {/* Gold/Pink shimmer overlay */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-citadel-gold/10 via-transparent to-pink-500/10 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-citadel-black/30 via-transparent to-transparent pointer-events-none" />
               </div>
             </div>
           </div>

@@ -33,12 +33,12 @@ export function Footer() {
   return (
     <footer className="bg-citadel-black border-t border-citadel-border">
       {/* Main Footer */}
-      <div className="container-custom py-16">
-        <div className="grid lg:grid-cols-6 gap-12">
+      <div className="container-custom py-10 sm:py-16">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12">
           {/* Brand */}
-          <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10">
+          <div className="col-span-2 sm:col-span-3 lg:col-span-2">
+            <Link href="/" className="flex items-center gap-2 sm:gap-3 mb-4">
+              <div className="w-8 h-8 sm:w-10 sm:h-10">
                 <svg viewBox="0 0 40 40" fill="none" className="w-full h-full">
                   <path 
                     d="M20 2L37 12V28L20 38L3 28V12L20 2Z" 
@@ -58,7 +58,7 @@ export function Footer() {
                   />
                 </svg>
               </div>
-              <span className="font-serif text-xl font-semibold">
+              <span className="font-serif text-lg sm:text-xl font-semibold">
                 <span className="text-citadel-cream">Alternative</span>
                 <span className="text-citadel-gold"> Allocation</span>
               </span>
@@ -74,13 +74,13 @@ export function Footer() {
               <p className="text-sm font-medium text-citadel-cream mb-2">
                 Weekly Newsletter
               </p>
-              <form className="flex gap-2">
+              <form className="flex flex-col xs:flex-row gap-2">
                 <input
                   type="email"
                   placeholder="your@email.com"
-                  className="flex-1 bg-citadel-slate border border-citadel-border rounded-lg px-3 py-2 text-sm text-citadel-cream focus:outline-none focus:border-citadel-gold"
+                  className="flex-1 bg-citadel-slate border border-citadel-border rounded-lg px-3 py-2.5 text-sm text-citadel-cream focus:outline-none focus:border-citadel-gold min-h-[44px]"
                 />
-                <button type="submit" className="btn-primary py-2 px-4 text-sm">
+                <button type="submit" className="btn-primary py-2.5 px-4 text-sm whitespace-nowrap">
                   Subscribe
                 </button>
               </form>
@@ -88,13 +88,13 @@ export function Footer() {
 
             {/* Social */}
             <div className="flex gap-4">
-              <a href="#" className="text-citadel-cream/50 hover:text-citadel-gold transition-colors">
+              <a href="#" className="text-citadel-cream/50 hover:text-citadel-gold transition-colors p-2 -m-2">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-citadel-cream/50 hover:text-citadel-gold transition-colors">
+              <a href="#" className="text-citadel-cream/50 hover:text-citadel-gold transition-colors p-2 -m-2">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-citadel-cream/50 hover:text-citadel-gold transition-colors">
+              <a href="#" className="text-citadel-cream/50 hover:text-citadel-gold transition-colors p-2 -m-2">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
@@ -102,13 +102,13 @@ export function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="font-medium text-citadel-cream mb-4">Sectors</h4>
-            <ul className="space-y-3">
+            <h4 className="font-medium text-citadel-cream mb-3 sm:mb-4 text-sm sm:text-base">Sectors</h4>
+            <ul className="space-y-2 sm:space-y-3">
               {footerLinks.sectors.map((link) => (
                 <li key={link.href}>
                   <Link 
                     href={link.href}
-                    className="text-sm text-citadel-cream/60 hover:text-citadel-gold transition-colors"
+                    className="text-xs sm:text-sm text-citadel-cream/60 hover:text-citadel-gold transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -118,13 +118,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-medium text-citadel-cream mb-4">Global</h4>
-            <ul className="space-y-3">
+            <h4 className="font-medium text-citadel-cream mb-3 sm:mb-4 text-sm sm:text-base">Global</h4>
+            <ul className="space-y-2 sm:space-y-3">
               {footerLinks.global.map((link) => (
                 <li key={link.href}>
                   <Link 
                     href={link.href}
-                    className="text-sm text-citadel-cream/60 hover:text-citadel-gold transition-colors"
+                    className="text-xs sm:text-sm text-citadel-cream/60 hover:text-citadel-gold transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -134,13 +134,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-medium text-citadel-cream mb-4">Company</h4>
-            <ul className="space-y-3">
+            <h4 className="font-medium text-citadel-cream mb-3 sm:mb-4 text-sm sm:text-base">Company</h4>
+            <ul className="space-y-2 sm:space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
                   <Link 
                     href={link.href}
-                    className="text-sm text-citadel-cream/60 hover:text-citadel-gold transition-colors"
+                    className="text-xs sm:text-sm text-citadel-cream/60 hover:text-citadel-gold transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -150,13 +150,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-medium text-citadel-cream mb-4">Legal</h4>
-            <ul className="space-y-3">
+            <h4 className="font-medium text-citadel-cream mb-3 sm:mb-4 text-sm sm:text-base">Legal</h4>
+            <ul className="space-y-2 sm:space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.href}>
                   <Link 
                     href={link.href}
-                    className="text-sm text-citadel-cream/60 hover:text-citadel-gold transition-colors"
+                    className="text-xs sm:text-sm text-citadel-cream/60 hover:text-citadel-gold transition-colors"
                   >
                     {link.label}
                   </Link>

@@ -56,14 +56,14 @@ export function Navigation() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-citadel-black/95 backdrop-blur-md border-b border-citadel-border' 
-          : 'bg-transparent'
+          : 'bg-citadel-black/50 backdrop-blur-sm'
       }`}
     >
       <nav className="container-custom">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 relative">
+          <Link href="/" className="flex items-center gap-2 sm:gap-3 group">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 relative">
               <svg viewBox="0 0 40 40" fill="none" className="w-full h-full">
                 <path 
                   d="M20 2L37 12V28L20 38L3 28V12L20 2Z" 
@@ -83,8 +83,9 @@ export function Navigation() {
                 />
               </svg>
             </div>
-            <span className="font-serif text-xl font-semibold tracking-tight">
-              <span className="text-citadel-cream">Alternative</span>
+            <span className="font-serif text-base sm:text-xl font-semibold tracking-tight">
+              <span className="text-citadel-cream hidden xs:inline">Alternative</span>
+              <span className="text-citadel-cream xs:hidden">Alt</span>
               <span className="text-citadel-gold"> Allocation</span>
             </span>
           </Link>
@@ -149,24 +150,24 @@ export function Navigation() {
 
         {/* Mobile Navigation */}
         {isMobileOpen && (
-          <div className="lg:hidden py-4 border-t border-citadel-border animate-fade-in">
-            <div className="flex flex-col gap-2">
+          <div className="lg:hidden py-4 border-t border-citadel-gold/20 animate-fade-in bg-citadel-black/98 backdrop-blur-xl max-h-[calc(100vh-4rem)] overflow-y-auto">
+            <div className="flex flex-col gap-1">
               {navItems.map((item) => (
                 <div key={item.label}>
                   <Link
                     href={item.href}
-                    className="block px-4 py-3 text-citadel-cream hover:text-citadel-gold transition-colors"
+                    className="block px-4 py-3 text-citadel-cream hover:text-citadel-gold hover:bg-citadel-slate/50 rounded-lg transition-all font-medium"
                     onClick={() => setIsMobileOpen(false)}
                   >
                     {item.label}
                   </Link>
                   {item.children && (
-                    <div className="pl-6 border-l border-citadel-border ml-4">
+                    <div className="pl-4 ml-4 border-l-2 border-citadel-gold/20 space-y-1 mb-2">
                       {item.children.map((child) => (
                         <Link
                           key={child.label}
                           href={child.href}
-                          className="block px-4 py-2 text-sm text-citadel-cream/70 hover:text-citadel-gold transition-colors"
+                          className="block px-4 py-2.5 text-sm text-citadel-cream/70 hover:text-citadel-gold hover:bg-citadel-slate/30 rounded-lg transition-all"
                           onClick={() => setIsMobileOpen(false)}
                         >
                           {child.label}
@@ -176,8 +177,8 @@ export function Navigation() {
                   )}
                 </div>
               ))}
-              <div className="flex flex-col gap-3 mt-4 px-4">
-                <Link href="/about" className="btn-secondary w-full text-center">
+              <div className="flex flex-col gap-3 mt-4 pt-4 px-4 border-t border-citadel-border">
+                <Link href="/about" className="btn-secondary w-full text-center justify-center">
                   About
                 </Link>
                 <TalkToExpertButton variant="primary" className="w-full text-center justify-center" />
